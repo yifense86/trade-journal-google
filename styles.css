@@ -10,7 +10,7 @@
         font-family: sans-serif;
       }
       .container {
-        max-width: 800px;
+        max-width: 600px;
         margin: 0 auto;
         padding: 20px;
       }
@@ -18,15 +18,17 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        align-items: flex-start;
       }
       label {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
       }
       input, select, textarea, button {
-        width: 400px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 400px;
         padding: 5px;
         background-color: #2e2e2e;
         color: #ffffff;
@@ -41,6 +43,7 @@
         border: none;
         padding: 10px;
         cursor: pointer;
+        width: auto;
       }
       button:hover {
         background-color: #45a049;
