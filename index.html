@@ -1,20 +1,71 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trade Journal</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <h2>Trade Journal Entry</h2>
-    <form id="tradeForm">
-      <!-- Form elements will be dynamically injected by script.js -->
-    </form>
-    <div id="entries"></div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+<html>
+  <head>
+    <title>Trade Journal</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        font-family: sans-serif;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      input, select, textarea, button {
+        width: 100%;
+        max-width: 400px;
+        padding: 5px;
+        background-color: #2e2e2e;
+        color: #ffffff;
+        border: 1px solid #444;
+        border-radius: 4px;
+      }
+      textarea {
+        resize: vertical;
+      }
+      button {
+        background-color: #4caf50;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: auto;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .entry {
+        border: 1px solid #444;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #2a2a2a;
+      }
+    </style>
+    <script>
+      const UPLOAD_URL = "https://script.google.com/macros/s/AKfycbxcyBak6UOIc45vCFuxxNd4GYbAKL6e7mXkSI1JG1S3pFE_-FeQuoB-TQ2LXrqJVADL/exec";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/react@17/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="root"></div>
+    </div>
+    <script type="text/babel">
+      function TradeJournalForm() {
